@@ -1,0 +1,30 @@
+
+services:
+  firebird:
+    image: jacobalberty/firebird
+    container_name: firebird-db
+    environment:
+      ISC_USER: SYSDBA
+      ISC_PASSWORD: masterkey
+    ports:
+      - "3050:3050"
+    volumes:
+      - firebird_data:/firebird/data
+    networks:
+      - mynetwork
+
+  dbeaver:
+    image: dbeaver/cloudbeaver
+    container_name: dbeaver
+    ports:
+      - "8978:8978" # Web UI de DBeaver
+    networks:
+      - mynetwork
+    depends_on:
+      - firebird
+
+volumes:
+  firebird_data:
+
+networks:
+  mynetwork:
