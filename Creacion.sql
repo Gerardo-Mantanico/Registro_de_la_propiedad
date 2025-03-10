@@ -112,6 +112,7 @@ CREATE TABLE `compra_venta` (
   `id` Serial PRIMARY KEY,
   `moneda` bigint,
   `valor_inmueble` decimal(10.2),
+  `id_finca` bigint,
   `observaciones` text,
   `colegiado` bigint
 );
@@ -176,6 +177,7 @@ CREATE TABLE `gravamenes_licitaciones` (
   `id` serial PRIMARY KEY,
   `id_unificacion` bigint,
   `tipo_gravamenes_licitaciones` bigint
+  `id_finca` biginit
 );
 
 CREATE TABLE `titulacion_supletoria` (
