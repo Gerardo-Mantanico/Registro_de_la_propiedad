@@ -1,499 +1,432 @@
-CREATE TABLE `ocupacion` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(100)
+
+CREATE TABLE OCUPACION (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(100)
 );
 
-CREATE TABLE `estado_civi` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(50)
+CREATE TABLE ESTADO_CIVIL (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(50)
 );
 
-CREATE TABLE `sexo` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(25)
+CREATE TABLE SEXO (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(25)
 );
 
-CREATE TABLE `persona` (
-  `cui` serial PRIMARY KEY,
-  `primer_nombre` varchar(72),
-  `segundo_nombre` varchar(73),
-  `tercer_nombre` varchar(72),
-  `primer_apellido` varchar(72),
-  `segundo_apellido` varchar(72),
-  `nit` int(13),
-  `ocupacion` int,
-  `estado_civi` int,
-  `sexo` int,
-  `correo` varchar(250),
-  `fecha_nacimiento` date,
-  `ubicacion_nacimiento` int,
-  `recidencia` int,
-  `telefono` int(8)
+CREATE TABLE PERSONA (
+    CUI INTEGER PRIMARY KEY,
+    PRIMER_NOMBRE VARCHAR(72),
+    SEGUNDO_NOMBRE VARCHAR(73),
+    TERCER_NOMBRE VARCHAR(72),
+    PRIMER_APELLIDO VARCHAR(72),
+    SEGUNDO_APELLIDO VARCHAR(72),
+    NIT INTEGER,
+    OCUPACION INTEGER,
+    ESTADO_CIVIL INTEGER,
+    SEXO INTEGER,
+    CORREO VARCHAR(250),
+    FECHA_NACIMIENTO DATE,
+    UBICACION_NACIMIENTO INTEGER,
+    RESIDENCIA INTEGER,
+    TELEFONO INTEGER,
+    FOREIGN KEY (OCUPACION) REFERENCES OCUPACION(ID),
+    FOREIGN KEY (ESTADO_CIVIL) REFERENCES ESTADO_CIVIL(ID),
+    FOREIGN KEY (SEXO) REFERENCES SEXO(ID)
 );
 
-CREATE TABLE `dpi` (
-  `numero_serie` serial PRIMARY KEY,
-  `cui` bigint,
-  `fecha_emision` date,
-  `fecha_expiracion` date
+CREATE TABLE DPI (
+    NUMERO_SERIE INTEGER PRIMARY KEY,
+    CUI INTEGER,
+    FECHA_EMISION DATE,
+    FECHA_EXPIRACION DATE,
+    FOREIGN KEY (CUI) REFERENCES PERSONA(CUI)
 );
 
-CREATE TABLE `departamento` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(100)
+CREATE TABLE DEPARTAMENTO (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(100)
 );
 
-CREATE TABLE `municipio` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(100),
-  `municipio` bigint
+CREATE TABLE MUNICIPIO (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(100),
+    DEPARTAMENTO_ID INTEGER,
+    FOREIGN KEY (DEPARTAMENTO_ID) REFERENCES DEPARTAMENTO(ID)
 );
 
-CREATE TABLE `tipo_zona` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(120)
+CREATE TABLE TIPO_ZONA (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(120)
 );
 
-CREATE TABLE `jurisdiccion` (
-  `id` Serial PRIMARY KEY,
-  `id_tipo_zona` bigint,
-  `nombre` varchar(72),
-  `id_municipio` bigint
+
+CREATE TABLE JURISDICCION (
+    ID INTEGER PRIMARY KEY,
+    ID_TIPO_ZONA INTEGER,
+    NOMBRE VARCHAR(72),
+    ID_MUNICIPIO INTEGER,
+    FOREIGN KEY (ID_TIPO_ZONA) REFERENCES TIPO_ZONA(ID),
+    FOREIGN KEY (ID_MUNICIPIO) REFERENCES MUNICIPIO(ID)
 );
 
-CREATE TABLE `tipo_libro` (
-  `id` serial PRIMARY KEY,
-  `serie` serial,
-  `simbolo` varchar(1),
-  `departamento` bigint
+CREATE TABLE TIPO_LIBRO (
+    ID INTEGER PRIMARY KEY,
+    SERIE INTEGER,
+    SIMBOLO VARCHAR(1),
+    DEPARTAMENTO INTEGER,
+    FOREIGN KEY (DEPARTAMENTO) REFERENCES DEPARTAMENTO(ID)
 );
 
-CREATE TABLE `naturaleza` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(72)
+CREATE TABLE NATURALEZA (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(72)
 );
 
-CREATE TABLE `tipo_finca` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(25)
+CREATE TABLE TIPO_FINCA (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(25)
 );
 
-CREATE TABLE `tipo_edificacion` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(45)
+CREATE TABLE TIPO_EDIFICACION (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(45)
 );
 
-CREATE TABLE `finca` (
-  `id` serial PRIMARY KEY,
-  `folio` serial,
-  `tipo_libro` bigint,
-  `jurisdiccion` bigint,
-  `area` decimal(10,2),
-  `tipo_naturaleza` bigint,
-  `nombre` varchar(72),
-  `tipo_finca` bigint,
-  `edicacion` boolean,
-  `tipo_edificacion` bigint
+CREATE TABLE FINCA (
+    ID INTEGER PRIMARY KEY,
+    FOLIO INTEGER,
+    TIPO_LIBRO INTEGER,
+    JURISDICCION INTEGER,
+    AREA DECIMAL(10,2),
+    TIPO_NATURALEZA INTEGER,
+    NOMBRE VARCHAR(72),
+    TIPO_FINCA INTEGER,
+    EDICACION BOOLEAN,
+    TIPO_EDIFICACION INTEGER,
+    FOREIGN KEY (TIPO_LIBRO) REFERENCES TIPO_LIBRO(ID),
+    FOREIGN KEY (JURISDICCION) REFERENCES JURISDICCION(ID),
+    FOREIGN KEY (TIPO_NATURALEZA) REFERENCES NATURALEZA(ID),
+    FOREIGN KEY (TIPO_FINCA) REFERENCES TIPO_FINCA(ID),
+    FOREIGN KEY (TIPO_EDIFICACION) REFERENCES TIPO_EDIFICACION(ID)
 );
 
-CREATE TABLE `derecho_propiedad` (
-  `id` Serial PRIMARY KEY,
-  `nombre` varchar(250),
-  `descripcion` text
+CREATE TABLE DERECHO_PROPIEDAD (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(250),
+    DESCRIPCION BLOB SUB_TYPE TEXT
 );
 
-CREATE TABLE `moneda` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(72),
-  `simbolo` char(1)
+CREATE TABLE MONEDA (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(72),
+    SIMBOLO CHAR(1)
+);
+CREATE TABLE ESTADO_COLEGIADO (
+    ID INTEGER PRIMARY KEY,
+    ESTADO VARCHAR(35)
 );
 
-CREATE TABLE `compra_venta` (
-  `id` Serial PRIMARY KEY,
-  `moneda` bigint,
-  `valor_inmueble` decimal(10.2),
-  `id_finca` bigint,
-  `observaciones` text,
-  `colegiado` bigint
+CREATE TABLE CATEGORIA_COLEGIADO (
+    ID INTEGER PRIMARY KEY,
+    CATEGORIA VARCHAR(35)
 );
 
-CREATE TABLE `desmembraciones` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante` bigint,
-  `id_finca_matriz` bigint,
-  `id_finca_nueva` bigint,
-  `fecha_desmembracion` DATE,
-  `observaciones ` text
+CREATE TABLE ESPECIALIDAD_COLEGIADO (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(35)
 );
 
-CREATE TABLE `estado_colegiado` (
-  `id` serial PRIMARY KEY,
-  `estado` varchar(35)
+CREATE TABLE COLEGIADO (
+    ID INTEGER PRIMARY KEY,
+    ID_PERSONA INTEGER,
+    DPI INTEGER,
+    ESTADO_COLEGIADO INTEGER,
+    CATEGORIA INTEGER,
+    ESPECIALIDAD INTEGER,
+    FECHA_EXPIRACION DATE,
+    FECHA_EMISION DATE,
+    FOREIGN KEY (ID_PERSONA) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (DPI) REFERENCES DPI(NUMERO_SERIE),
+    FOREIGN KEY (ESTADO_COLEGIADO) REFERENCES ESTADO_COLEGIADO(ID),
+    FOREIGN KEY (CATEGORIA) REFERENCES CATEGORIA_COLEGIADO(ID),
+    FOREIGN KEY (ESPECIALIDAD) REFERENCES ESPECIALIDAD_COLEGIADO(ID)
 );
 
-CREATE TABLE `categoria_colegiado` (
-  `id` serial PRIMARY KEY,
-  `categoria` varchar(35)
+
+CREATE TABLE COMPRA_VENTA (
+    ID INTEGER PRIMARY KEY,
+    MONEDA INTEGER,
+    VALOR_INMUEBLE DECIMAL(10,2),
+    ID_FINCA INTEGER,
+    OBSERVACIONES BLOB SUB_TYPE TEXT,
+    COLEGIADO INTEGER,
+    FOREIGN KEY (MONEDA) REFERENCES MONEDA(ID),
+    FOREIGN KEY (ID_FINCA) REFERENCES FINCA(ID),
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID)
 );
 
-CREATE TABLE `especialidad_colegiado` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(35)
+CREATE TABLE DESMEMBRACIONES (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE INTEGER,
+    ID_FINCA_MATRIZ INTEGER,
+    ID_FINCA_NUEVA INTEGER,
+    FECHA_DESMEMBRACION DATE,
+    OBSERVACIONES BLOB SUB_TYPE TEXT,
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (ID_FINCA_MATRIZ) REFERENCES FINCA(ID),
+    FOREIGN KEY (ID_FINCA_NUEVA) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `colegiado` (
-  `id` serial PRIMARY KEY,
-  `id_persona` bigint,
-  `dpi` bigint,
-  `estado_colegiado` bigint,
-  `categoria` bigint,
-  `especialidad` bigint,
-  `fecha_expiracion` date,
-  `fecha_emision` date
+
+CREATE TABLE UNIFICACION (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE INTEGER,
+    ID_FINCA_NUEVA INTEGER,
+    AREA DECIMAL(10,2),
+    FECHA DATE,
+    OBSERVACIONES BLOB SUB_TYPE TEXT,
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (ID_FINCA_NUEVA) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `unificacion` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante` bigint,
-  `id_finca_nueva` bigint,
-  `area` decimal(10,2),
-  `fecha` DATE,
-  `observaciones` TEXT
+CREATE TABLE UNIFICACION_FINCAS (
+    ID_UNIFICACION INTEGER,
+    ID_FINCAS INTEGER,
+    FOREIGN KEY (ID_UNIFICACION) REFERENCES UNIFICACION(ID),
+    FOREIGN KEY (ID_FINCAS) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `unificacion_fincas` (
-  `id_unificacion` bigint,
-  `id_fincas` bigint
+CREATE TABLE TIPO_GRAVAMENES_LICITACIONES (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(72)
 );
 
-CREATE TABLE `tipo_gravamenes_licitaciones` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(72)
+CREATE TABLE GRAVAMENES_LICITACIONES (
+    ID INTEGER PRIMARY KEY,
+    ID_UNIFICACION INTEGER,
+    TIPO_GRAVAMENES_LICITACIONES INTEGER,
+    ID_FINCA INTEGER,
+    FOREIGN KEY (ID_UNIFICACION) REFERENCES UNIFICACION(ID),
+    FOREIGN KEY (TIPO_GRAVAMENES_LICITACIONES) REFERENCES TIPO_GRAVAMENES_LICITACIONES(ID),
+    FOREIGN KEY (ID_FINCA) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `gravamenes_licitaciones` (
-  `id` serial PRIMARY KEY,
-  `id_unificacion` bigint,
-  `tipo_gravamenes_licitaciones` bigint
-  `id_finca` biginit
+
+CREATE TABLE TITULACION_SUPLETORIA (
+    ID INTEGER PRIMARY KEY,
+    JUEZ_COMPOTENTE INTEGER,
+    COLEGIADO INTEGER,
+    ID_FINCA INTEGER,
+    FECHA DATE,
+    FOREIGN KEY (JUEZ_COMPOTENTE) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (ID_FINCA) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `titulacion_supletoria` (
-  `id` SERIAL PRIMARY KEY,
-  `juez_compotente` bigint,
-  `colegiado` bigint,
-  `id_finca` bigint,
-  `fecha` DATE
+CREATE TABLE PROPIETARIOS (
+    ID INTEGER PRIMARY KEY,
+    PERSONA INTEGER,
+    TITULACION_SUPLETORIA INTEGER,
+    FOREIGN KEY (PERSONA) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (TITULACION_SUPLETORIA) REFERENCES TITULACION_SUPLETORIA(ID)
 );
 
-CREATE TABLE `propietarios` (
-  `id` SERIAL PRIMARY KEY,
-  `persona` bigint,
-  `titulacion_supletoria` bigint
+CREATE TABLE PUNTO_CARDINALIDAD (
+    ID INTEGER PRIMARY KEY,
+    DESCRIPCION VARCHAR(25)
 );
 
-CREATE TABLE `punto_cardinalidad` (
-  `id` serila PRIMARY KEY,
-  `descripcion` varchar(25)
+CREATE TABLE COLIDANTE (
+    ID INTEGER PRIMARY KEY,
+    ID_INMUEBLE INTEGER,
+    PUNTO_CARDINAL INTEGER,
+    FOREIGN KEY (ID_INMUEBLE) REFERENCES FINCA(ID),
+    FOREIGN KEY (PUNTO_CARDINAL) REFERENCES PUNTO_CARDINALIDAD(ID)
 );
 
-CREATE TABLE `colidante` (
-  `id` serial PRIMARY KEY,
-  `id_inmueble` bigint,
-  `punto_cardinal` bigint
+CREATE TABLE COORDENADAS (
+    ID INTEGER PRIMARY KEY,
+    ID_INMUEBLE INTEGER,
+    LONGITUD DECIMAL(10,2),
+    LATITUD DECIMAL(10,2),
+    FOREIGN KEY (ID_INMUEBLE) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `coordenadas` (
-  `id` serial PRIMARY KEY,
-  `id_inmueble` bigint,
-  `longitud` decimal(10,2),
-  `latitud` decimal(10,2)
+CREATE TABLE TESTIGO (
+    ID INTEGER PRIMARY KEY,
+    TITULACION_SUPLETORIA INTEGER,
+    ID_COLINDANTE INTEGER,
+    FOREIGN KEY (TITULACION_SUPLETORIA) REFERENCES TITULACION_SUPLETORIA(ID),
+    FOREIGN KEY (ID_COLINDANTE) REFERENCES COLIDANTE(ID)
 );
 
-CREATE TABLE `testigo` (
-  `id` SERIAL PRIMARY KEY,
-  `titulacion_supletoria` bigint,
-  `id_colindante` bigint
+CREATE TABLE ORDEN_DEFUNCION (
+    ID INTEGER PRIMARY KEY,
+    ID_PERSONA INTEGER,
+    CAUSA BLOB SUB_TYPE TEXT,
+    UBICACION_FALLECIMIENTO INTEGER,
+    FECHA_HORA TIMESTAMP,
+    FOREIGN KEY (ID_PERSONA) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (UBICACION_FALLECIMIENTO) REFERENCES MUNICIPIO(ID)
 );
 
-CREATE TABLE `orden_defuncion` (
-  `id` serial PRIMARY KEY,
-  `id_persona` bigint,
-  `causa` text,
-  `lugar_fallecimiento` bigint,
-  `fecha_hora` datetime
+CREATE TABLE TESTAMENTO_HEREDITARIO (
+    ID INTEGER PRIMARY KEY,
+    ORDEN_DEFUNCION INTEGER,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    FECHA_INGRESO DATE,
+    FOREIGN KEY (ORDEN_DEFUNCION) REFERENCES ORDEN_DEFUNCION(ID),
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI)
 );
 
-CREATE TABLE `testamento_hereditario` (
-  `id` SERIAL PRIMARY KEY,
-  `orden_defucion` bigint,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `fecha_ingreso` DATE
+CREATE TABLE HEREDEROS (
+    ID INTEGER PRIMARY KEY,
+    ID_PERSONA INTEGER,
+    ID_TESTAMENTO_HEREDITARIO INTEGER,
+    FOREIGN KEY (ID_PERSONA) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (ID_TESTAMENTO_HEREDITARIO) REFERENCES TESTAMENTO_HEREDITARIO(ID)
 );
 
-CREATE TABLE `herederos` (
-  `id` serial PRIMARY KEY,
-  `id_persona` bigint,
-  `id_testamento_hereditario` bigint
+CREATE TABLE HEREDITARIO_INTESTADO (
+    ID INTEGER PRIMARY KEY,
+    ORDEN_DEFUNCION INTEGER,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    FECHA_INGRESO DATE,
+    FOREIGN KEY (ORDEN_DEFUNCION) REFERENCES ORDEN_DEFUNCION(ID),
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI)
 );
 
-CREATE TABLE `hereditario_intestado` (
-  `id` SERIAL PRIMARY KEY,
-  `orden_defucion` bigint,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `fecha_ingreso` DATE
+CREATE TABLE ANOTACIONES (
+    ID INTEGER PRIMARY KEY,
+    FINCA_ID INTEGER,
+    DESCRIPCION BLOB SUB_TYPE TEXT,
+    FECHA DATE,
+    FOREIGN KEY (FINCA_ID) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `anotaciones` (
-  `anotacion_id` SERIAL PRIMARY KEY,
-  `finca_id` bigint,
-  `texto` TEXT,
-  `fecha` DATE
+CREATE TABLE BANCO (
+    ID INTEGER PRIMARY KEY,
+    NOMBRE VARCHAR(72),
+    CODIGO INTEGER,
+    DIRECCION VARCHAR(78),
+    TELEFONO INTEGER,
+    CORREO VARCHAR(70)
 );
 
-CREATE TABLE `banco` (
-  `id` serial PRIMARY KEY,
-  `nombre` varchar(72),
-  `codigo` bigint,
-  `direccion` varchar(78),
-  `telefono` int,
-  `correo` varchar(70)
+CREATE TABLE PERIODO (
+    ID INTEGER PRIMARY KEY,
+    PERIODO VARCHAR(60)
 );
 
-CREATE TABLE `periodo` (
-  `id` serial PRIMARY KEY,
-  `periodo` varchar(60)
+CREATE TABLE CREDITO (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(45)
 );
 
-CREATE TABLE `credito` (
-  `id` serial PRIMARY KEY,
-  `tipo` varchar(45)
+CREATE TABLE HIPOTECAS (
+    ID INTEGER PRIMARY KEY,
+    REPRESENTANTE_LEGAL INTEGER,
+    TIPO_CREDITO INTEGER,
+    PORCENTAJE INTEGER,
+    BANCO INTEGER,
+    FECHA_EMISION DATE,
+    FECHA_EXPIRACION DATE,
+    ID_FINCA INTEGER,
+    COLEGIADO INTEGER,
+    PERIODO INTEGER,
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (TIPO_CREDITO) REFERENCES CREDITO(ID),
+    FOREIGN KEY (BANCO) REFERENCES BANCO(ID),
+    FOREIGN KEY (ID_FINCA) REFERENCES FINCA(ID),
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (PERIODO) REFERENCES PERIODO(ID)
 );
 
-CREATE TABLE `hipotecas` (
-  `id` SERIAL PRIMARY KEY,
-  `representante_legal` bigint,
-  `tipo_credio` bigint,
-  `porcentaje` int,
-  `banco` bigint,
-  `fecha_emision` date,
-  `fecha_expiracion` DATE,
-  `id_finca` bigint,
-  `colegiado` bigint,
-  `periodo` bigint
+CREATE TABLE PROPIEDAD_HORIZONTAL (
+    ID INTEGER PRIMARY KEY,
+    FINCA_ID INTEGER,
+    DESCRIPCION BLOB SUB_TYPE TEXT,
+    FECHA DATE,
+    FOREIGN KEY (FINCA_ID) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `propiedad_horizontal` (
-  `id` SERIAL PRIMARY KEY,
-  `finca_id` bigint,
-  `descripcion` TEXT,
-  `fecha` DATE
+CREATE TABLE AMENIDADES (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(100)
 );
 
-CREATE TABLE `amenidades` (
-  `id` SERIAL PRIMARY KEY,
-  `tipo` VARCHAR(100)
+CREATE TABLE DONACIONES (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    MENSAJE_ACEPTACION BLOB SUB_TYPE TEXT,
+    ID_FINCA_DONADA INTEGER,
+    FECHA_DONACION DATE,
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (ID_FINCA_DONADA) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `donaciones` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `mensaje__aceptacion` txt,
-  `id_finca_donada` bigint,
-  `fecha_donacion` DATE
+CREATE TABLE PERMUTAS (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    FINCA_ID INTEGER,
+    FECHA DATE,
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (FINCA_ID) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `permutas` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `finca_id` bigint,
-  `fecha` DATE
+CREATE TABLE ADJUDICACION (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    FINCA_ID INTEGER,
+    FECHA DATE,
+    FOREIGN KEY (COLEGIADO) REFERENCES COLEGIADO(ID),
+    FOREIGN KEY (REPRESENTANTE_LEGAL) REFERENCES PERSONA(CUI),
+    FOREIGN KEY (FINCA_ID) REFERENCES FINCA(ID)
 );
 
-CREATE TABLE `adjudicacion` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `finca_id` bigint,
-  `fecha` DATE
+CREATE TABLE SOCIOS (
+    ID INTEGER PRIMARY KEY,
+    ID_ADJUDICACION INTEGER,
+    SOCIO INTEGER,
+    PORCENTAJE INTEGER,
+    FOREIGN KEY (ID_ADJUDICACION) REFERENCES ADJUDICACION(ID),
+    FOREIGN KEY (SOCIO) REFERENCES PERSONA(CUI)
 );
 
-CREATE TABLE `socios` (
-  `id` serial PRIMARY KEY,
-  `id_adjudicacion` bigint,
-  `socios` biginit,
-  `porcentaje` int
+CREATE TABLE DESMEMBRACION (
+    ID INTEGER PRIMARY KEY,
+    COLEGIADO INTEGER,
+    REPRESENTANTE_LEGAL INTEGER,
+    FINCA_ID_DESMEMBRAR INTEGER,
+    FINCA_ID_NUEVA INTEGER,
+    FECHA DATE
 );
 
-CREATE TABLE `desmembracion` (
-  `id` SERIAL PRIMARY KEY,
-  `colegiado` bigint,
-  `representante_legal` bigint,
-  `finca_id_desmembrar` bigint,
-  `finca_id_nueva` bigint,
-  `fecha` DATE
+CREATE TABLE DUPLICADO (
+    ID INTEGER PRIMARY KEY,
+    FINCA_ID INTEGER
 );
 
-CREATE TABLE `duplicado` (
-  `id` SERIAL PRIMARY KEY,
-  `finca_id` bigint
+CREATE TABLE TIPOS_SERVIDUMBRE (
+    ID INTEGER PRIMARY KEY,
+    TIPO VARCHAR(200)
 );
 
-CREATE TABLE `tipos_servidumbre` (
-  `id` SERIAL PRIMARY KEY,
-  `tipo` VARCHAR(200)
+CREATE TABLE SERVIDUMBRES (
+    ID INTEGER PRIMARY KEY,
+    TIPO_SERVIDUMBRE INTEGER,
+    FINCA_ID INTEGER
 );
 
-CREATE TABLE `servidumbres` (
-  `id` SERIAL PRIMARY KEY,
-  `tipo_servidumbre` bigint,
-  `finca_id` bigint
-);
-
-ALTER TABLE `desmembraciones` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `desmembraciones` ADD FOREIGN KEY (`representante`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `desmembraciones` ADD FOREIGN KEY (`id_finca_matriz`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `desmembraciones` ADD FOREIGN KEY (`id_finca_nueva`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `colegiado` ADD FOREIGN KEY (`estado_colegiado`) REFERENCES `estado_colegiado` (`id`);
-
-ALTER TABLE `colegiado` ADD FOREIGN KEY (`categoria`) REFERENCES `categoria_colegiado` (`id`);
-
-ALTER TABLE `colegiado` ADD FOREIGN KEY (`especialidad`) REFERENCES `especialidad_colegiado` (`id`);
-
-ALTER TABLE `unificacion` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `unificacion` ADD FOREIGN KEY (`representante`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `unificacion_fincas` ADD FOREIGN KEY (`id_unificacion`) REFERENCES `unificacion` (`id`);
-
-ALTER TABLE `unificacion_fincas` ADD FOREIGN KEY (`id_fincas`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `gravamenes_licitaciones` ADD FOREIGN KEY (`id_unificacion`) REFERENCES `unificacion` (`id`);
-
-ALTER TABLE `gravamenes_licitaciones` ADD FOREIGN KEY (`tipo_gravamenes_licitaciones`) REFERENCES `tipo_gravamenes_licitaciones` (`id`);
-
-ALTER TABLE `titulacion_supletoria` ADD FOREIGN KEY (`juez_compotente`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `titulacion_supletoria` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `titulacion_supletoria` ADD FOREIGN KEY (`id_finca`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `propietarios` ADD FOREIGN KEY (`persona`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `propietarios` ADD FOREIGN KEY (`titulacion_supletoria`) REFERENCES `titulacion_supletoria` (`id`);
-
-ALTER TABLE `colidante` ADD FOREIGN KEY (`id_inmueble`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `coordenadas` ADD FOREIGN KEY (`id_inmueble`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `testigo` ADD FOREIGN KEY (`titulacion_supletoria`) REFERENCES `titulacion_supletoria` (`id`);
-
-ALTER TABLE `testigo` ADD FOREIGN KEY (`id_colindante`) REFERENCES `colidante` (`id`);
-
-ALTER TABLE `orden_defuncion` ADD FOREIGN KEY (`id_persona`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `testamento_hereditario` ADD FOREIGN KEY (`orden_defucion`) REFERENCES `orden_defuncion` (`id`);
-
-ALTER TABLE `testamento_hereditario` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `testamento_hereditario` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `herederos` ADD FOREIGN KEY (`id_persona`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `herederos` ADD FOREIGN KEY (`id_testamento_hereditario`) REFERENCES `testamento_hereditario` (`id`);
-
-ALTER TABLE `hereditario_intestado` ADD FOREIGN KEY (`orden_defucion`) REFERENCES `orden_defuncion` (`id`);
-
-ALTER TABLE `hereditario_intestado` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `hereditario_intestado` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `anotaciones` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`tipo_credio`) REFERENCES `credito` (`id`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`banco`) REFERENCES `banco` (`id`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`id_finca`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `hipotecas` ADD FOREIGN KEY (`periodo`) REFERENCES `periodo` (`id`);
-
-ALTER TABLE `propiedad_horizontal` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `donaciones` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `donaciones` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `donaciones` ADD FOREIGN KEY (`id_finca_donada`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `permutas` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `permutas` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `permutas` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `adjudicacion` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `adjudicacion` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `adjudicacion` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `socios` ADD FOREIGN KEY (`id_adjudicacion`) REFERENCES `adjudicacion` (`id`);
-
-ALTER TABLE `socios` ADD FOREIGN KEY (`socios`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `desmembracion` ADD FOREIGN KEY (`colegiado`) REFERENCES `colegiado` (`id`);
-
-ALTER TABLE `desmembracion` ADD FOREIGN KEY (`representante_legal`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `desmembracion` ADD FOREIGN KEY (`finca_id_desmembrar`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `desmembracion` ADD FOREIGN KEY (`finca_id_nueva`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `duplicado` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `servidumbres` ADD FOREIGN KEY (`tipo_servidumbre`) REFERENCES `tipos_servidumbre` (`id`);
-
-ALTER TABLE `servidumbres` ADD FOREIGN KEY (`finca_id`) REFERENCES `finca` (`id`);
-
-ALTER TABLE `persona` ADD FOREIGN KEY (`ocupacion`) REFERENCES `ocupacion` (`id`);
-
-ALTER TABLE `persona` ADD FOREIGN KEY (`estado_civi`) REFERENCES `estado_civi` (`id`);
-
-ALTER TABLE `persona` ADD FOREIGN KEY (`sexo`) REFERENCES `sexo` (`id`);
-
-ALTER TABLE `dpi` ADD FOREIGN KEY (`cui`) REFERENCES `persona` (`cui`);
-
-ALTER TABLE `municipio` ADD FOREIGN KEY (`municipio`) REFERENCES `departamento` (`id`);
-
-ALTER TABLE `jurisdiccion` ADD FOREIGN KEY (`id_tipo_zona`) REFERENCES `tipo_zona` (`id`);
-
-ALTER TABLE `jurisdiccion` ADD FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id`);
-
-ALTER TABLE `tipo_libro` ADD FOREIGN KEY (`departamento`) REFERENCES `departamento` (`id`);
-
-ALTER TABLE `finca` ADD FOREIGN KEY (`tipo_libro`) REFERENCES `tipo_libro` (`id`);
-
-ALTER TABLE `finca` ADD FOREIGN KEY (`jurisdiccion`) REFERENCES `jurisdiccion` (`id`);
-
-ALTER TABLE `finca` ADD FOREIGN KEY (`tipo_naturaleza`) REFERENCES `naturaleza` (`id`);
-
-ALTER TABLE `finca` ADD FOREIGN KEY (`tipo_finca`) REFERENCES `tipo_finca` (`id`);
-
-ALTER TABLE `finca` ADD FOREIGN KEY (`tipo_edificacion`) REFERENCES `tipo_edificacion` (`id`);
-
-ALTER TABLE `compra_venta` ADD FOREIGN KEY (`moneda`) REFERENCES `moneda` (`id`);

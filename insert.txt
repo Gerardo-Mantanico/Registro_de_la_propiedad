@@ -1,0 +1,426 @@
+-- Insertar datos en la tabla ocupacion
+INSERT INTO ocupacion (tipo) VALUES ('Ingeniero');
+INSERT INTO ocupacion (tipo) VALUES ('Doctor');
+INSERT INTO ocupacion (tipo) VALUES ('Profesor');
+INSERT INTO ocupacion (tipo) VALUES ('Abogado');
+INSERT INTO ocupacion (tipo) VALUES ('Arquitecto');
+INSERT INTO ocupacion (tipo) VALUES ('Contador');
+INSERT INTO ocupacion (tipo) VALUES ('Enfermero');
+INSERT INTO ocupacion (tipo) VALUES ('Policía');
+INSERT INTO ocupacion (tipo) VALUES ('Bombero');
+INSERT INTO ocupacion (tipo) VALUES ('Electricista');
+
+-- Insertar datos en la tabla estado_civi
+INSERT INTO estado_civil (tipo) VALUES ('Soltero');
+INSERT INTO estado_civil (tipo) VALUES ('Casado');
+INSERT INTO estado_civil (tipo) VALUES ('Divorciado');
+INSERT INTO estado_civil (tipo) VALUES ('Viudo');
+INSERT INTO estado_civil (tipo) VALUES ('Unión Libre');
+INSERT INTO estado_civil (tipo) VALUES ('Separado');
+INSERT INTO estado_civil (tipo) VALUES ('Comprometido');
+INSERT INTO estado_civil (tipo) VALUES ('Anulado');
+INSERT INTO estado_civil (tipo) VALUES ('Conviviente');
+INSERT INTO estado_civil (tipo) VALUES ('Desconocido');
+
+-- Insertar datos en la tabla sexo
+INSERT INTO sexo (tipo) VALUES ('Masculino');
+INSERT INTO sexo (tipo) VALUES ('Femenino');
+
+-- Insertar datos en la tabla departamento
+INSERT INTO departamento (nombre) VALUES ('Guatemala');
+INSERT INTO departamento (nombre) VALUES ('Sacatepéquez');
+INSERT INTO departamento (nombre) VALUES ('Escuintla');
+INSERT INTO departamento (nombre) VALUES ('Quetzaltenango');
+INSERT INTO departamento (nombre) VALUES ('Petén');
+INSERT INTO departamento (nombre) VALUES ('Jutiapa');
+INSERT INTO departamento (nombre) VALUES ('Zacapa');
+INSERT INTO departamento (nombre) VALUES ('Chimaltenango');
+INSERT INTO departamento (nombre) VALUES ('Huehuetenango');
+INSERT INTO departamento (nombre) VALUES ('Alta Verapaz');
+
+-- Insertar datos en la tabla municipio
+INSERT INTO municipio (nombre, municipio) VALUES ('Guatemala', 1);
+INSERT INTO municipio (nombre, municipio) VALUES ('Mixco', 1);
+INSERT INTO municipio (nombre, municipio) VALUES ('Villa Nueva', 1);
+INSERT INTO municipio (nombre, municipio) VALUES ('Antigua Guatemala', 2);
+INSERT INTO municipio (nombre, municipio) VALUES ('Escuintla', 3);
+INSERT INTO municipio (nombre, municipio) VALUES ('Coatepeque', 4);
+INSERT INTO municipio (nombre, municipio) VALUES ('San Benito', 5);
+INSERT INTO municipio (nombre, municipio) VALUES ('Jutiapa', 6);
+INSERT INTO municipio (nombre, municipio) VALUES ('Zacapa', 7);
+INSERT INTO municipio (nombre, municipio) VALUES ('Chimaltenango', 8);
+
+-- Insertar datos en la tabla persona
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Juan', 'Carlos', 'José', 'Pérez', 'López', 1234567890123, 1, 1, 1, 'juan.perez@example.com', '1990-05-15', 1, 1, 55551234);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('María', 'Fernanda', NULL, 'García', 'Martínez', 9876543210123, 2, 2, 2, 'maria.garcia@example.com', '1985-08-22', 2, 2, 55552345);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Carlos', NULL, NULL, 'Rodríguez', 'Hernández', 1231231231234, 3, 3, 1, 'carlos.rodriguez@example.com', '1978-11-10', 3, 3, 55553456);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Ana', 'Sofía', 'Isabel', 'Méndez', 'Ortiz', 5555555555555, 4, 4, 2, 'ana.mendez@example.com', '1995-03-25', 4, 4, 55554567);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Pedro', 'Antonio', NULL, 'Fernández', 'Castro', 6666666666666, 5, 5, 1, 'pedro.fernandez@example.com', '1982-07-12', 5, 5, 55555678);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Laura', 'Beatriz', 'Elena', 'Ramírez', 'Gómez', 7777777777777, 6, 6, 2, 'laura.ramirez@example.com', '1999-12-30', 6, 6, 55556789);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('José', NULL, NULL, 'Díaz', 'Ruiz', 8888888888888, 7, 7, 1, 'jose.diaz@example.com', '1987-06-17', 7, 7, 55557890);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Carmen', 'Rosa', NULL, 'Vásquez', 'Molina', 9999999999999, 8, 8, 2, 'carmen.vasquez@example.com', '1993-04-14', 8, 8, 55558901);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Luis', 'Eduardo', NULL, 'Torres', 'Sánchez', 1111111111111, 9, 9, 1, 'luis.torres@example.com', '1980-09-05', 9, 9, 55559012);
+INSERT INTO persona (primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, nit, ocupacion, estado_civi, sexo, correo, fecha_nacimiento, ubicacion_nacimiento, recidencia, telefono)
+VALUES ('Elena', 'Patricia', NULL, 'Hernández', 'Ramírez', 2222222222222, 10, 10, 2, 'elena.hernandez@example.com', '1975-01-20', 10, 10, 55550123);
+
+
+---
+-- Insertar datos en la tabla dpi
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (1, '2020-01-01', '2030-01-01');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (2, '2019-05-15', '2029-05-15');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (3, '2021-07-20', '2031-07-20');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (4, '2018-10-10', '2028-10-10');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (5, '2017-12-05', '2027-12-05');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (6, '2016-08-22', '2026-08-22');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (7, '2015-03-30', '2025-03-30');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (8, '2014-06-18', '2024-06-18');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (9, '2013-11-25', '2023-11-25');
+INSERT INTO dpi (cui, fecha_emision, fecha_expiracion) VALUES (10, '2012-09-07', '2022-09-07');
+
+-- Insertar datos en la tabla tipo_zona
+INSERT INTO tipo_zona (nombre) VALUES ('Urbana');
+INSERT INTO tipo_zona (nombre) VALUES ('Rural');
+INSERT INTO tipo_zona (nombre) VALUES ('Residencial');
+INSERT INTO tipo_zona (nombre) VALUES ('Comercial');
+INSERT INTO tipo_zona (nombre) VALUES ('Industrial');
+INSERT INTO tipo_zona (nombre) VALUES ('Mixta');
+INSERT INTO tipo_zona (nombre) VALUES ('Agrícola');
+INSERT INTO tipo_zona (nombre) VALUES ('Forestal');
+INSERT INTO tipo_zona (nombre) VALUES ('Turística');
+INSERT INTO tipo_zona (nombre) VALUES ('Protegida');
+
+-- Insertar datos en la tabla jurisdiccion
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (1, 'Zona Centro', 1);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (2, 'Zona Rural Norte', 2);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (3, 'Residencial Este', 3);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (4, 'Comercial Oeste', 4);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (5, 'Industrial Sur', 5);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (6, 'Zona Mixta 1', 6);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (7, 'Área Agrícola', 7);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (8, 'Bosque Protegido', 8);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (9, 'Área Turística', 9);
+INSERT INTO jurisdiccion (id_tipo_zona, nombre, id_municipio) VALUES (10, 'Reserva Natural', 10);
+
+-- Insertar datos en la tabla tipo_libro
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('A', 1);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('B', 2);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('C', 3);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('D', 4);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('E', 5);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('F', 6);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('G', 7);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('H', 8);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('I', 9);
+INSERT INTO tipo_libro (simbolo, departamento) VALUES ('J', 10);
+
+-- Insertar datos en la tabla naturaleza
+INSERT INTO naturaleza (nombre) VALUES ('Residencial');
+INSERT INTO naturaleza (nombre) VALUES ('Comercial');
+INSERT INTO naturaleza (nombre) VALUES ('Industrial');
+INSERT INTO naturaleza (nombre) VALUES ('Mixta');
+INSERT INTO naturaleza (nombre) VALUES ('Agrícola');
+INSERT INTO naturaleza (nombre) VALUES ('Forestal');
+INSERT INTO naturaleza (nombre) VALUES ('Turística');
+INSERT INTO naturaleza (nombre) VALUES ('Protegida');
+INSERT INTO naturaleza (nombre) VALUES ('Educativa');
+INSERT INTO naturaleza (nombre) VALUES ('Cultural');
+
+-- Insertar datos en la tabla tipo_finca
+INSERT INTO tipo_finca (tipo) VALUES ('Casa');
+INSERT INTO tipo_finca (tipo) VALUES ('Edificio');
+INSERT INTO tipo_finca (tipo) VALUES ('Terreno');
+INSERT INTO tipo_finca (tipo) VALUES ('Hacienda');
+INSERT INTO tipo_finca (tipo) VALUES ('Parcela');
+INSERT INTO tipo_finca (tipo) VALUES ('Rancho');
+INSERT INTO tipo_finca (tipo) VALUES ('Apartamento');
+INSERT INTO tipo_finca (tipo) VALUES ('Bodega');
+INSERT INTO tipo_finca (tipo) VALUES ('Centro Comercial');
+INSERT INTO tipo_finca (tipo) VALUES ('Finca Mixta');
+
+-- Insertar datos en la tabla tipo_edificacion
+INSERT INTO tipo_edificacion (tipo) VALUES ('Unifamiliar');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Multifamiliar');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Comercial');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Industrial');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Mixta');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Agrícola');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Oficinas');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Rascacielos');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Condominio');
+INSERT INTO tipo_edificacion (tipo) VALUES ('Edificio Público');
+
+-- Insertar datos en la tabla derecho_propiedad
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Propiedad Plena', 'Derecho absoluto sobre el inmueble');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Usufructo', 'Derecho a usar y disfrutar un inmueble sin ser propietario');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Nuda Propiedad', 'Derecho de propiedad sin usufructo');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Copropiedad', 'Propiedad compartida entre varias personas');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Propiedad Horizontal', 'Derecho sobre un bien en un edificio dividido en unidades');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Herencia', 'Derecho sobre un inmueble adquirido por sucesión');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Cesión de Derechos', 'Transferencia de derechos sobre un inmueble');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Derecho de Superficie', 'Uso del suelo ajeno para edificar');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Arrendamiento con Opción a Compra', 'Uso del inmueble con derecho a compra futura');
+INSERT INTO derecho_propiedad (nombre, descripcion) VALUES ('Hipoteca', 'Garantía real sobre el inmueble para asegurar una deuda');
+
+-- Insertar datos en la tabla moneda
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Quetzal', 'Q');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Dólar', '$');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Euro', '€');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Libra Esterlina', '£');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Yen Japonés', '¥');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Peso Mexicano', '$');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Real Brasileño', 'R$');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Peso Argentino', '$');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Rublo Ruso', '₽');
+INSERT INTO `moneda` (`nombre`, `simbolo`) VALUES ('Franco Suizo', 'CHF');
+
+-- Insertar datos en la tabla compra_venta
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (1, 500000.00, 'Venta de casa en zona residencial', 1);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (2, 250000.50, 'Compra de terreno para construcción', 2);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (3, 750000.75, 'Adquisición de edificio comercial', 3);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (4, 100000.00, 'Venta de apartamento en condominio', 4);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (5, 95000.25, 'Compra de finca agrícola', 5);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (6, 120000.00, 'Inversión en propiedad industrial', 6);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (7, 300000.40, 'Compra de rancho turístico', 7);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (8, 650000.00, 'Venta de bodega en área comercial', 8);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (9, 80000.00, 'Compra de casa en zona rural', 9);
+INSERT INTO `compra_venta` (`moneda`, `valor_inmueble`, `observaciones`, `colegiado`) VALUES (10, 450000.00, 'Venta de oficinas en centro financiero', 10);
+
+-- Insertar datos en la tabla desmembraciones
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (1, 2, 10, 11, '2024-01-15', 'Desmembración de terreno en dos lotes');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (2, 3, 11, 12, '2024-02-20', 'Fraccionamiento para urbanización');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (3, 4, 12, 13, '2024-03-25', 'Segregación para venta individual');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (4, 5, 13, 14, '2024-04-30', 'División de propiedad en varias partes');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (5, 6, 14, 15, '2024-05-10', 'Reducción de extensión de finca original');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (6, 7, 15, 16, '2024-06-05', 'Desmembración para construcción');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (7, 8, 16, 17, '2024-07-12', 'Separación para inversión comercial');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (8, 9, 17, 18, '2024-08-18', 'Repartición entre herederos');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (9, 10, 18, 19, '2024-09-23', 'Urbanización de predios');
+INSERT INTO `desmembraciones` (`colegiado`, `representante`, `id_finca_matriz`, `id_finca_nueva`, `fecha_desmembracion`, `observaciones`) VALUES (10, 1, 19, 20, '2024-10-29', 'Fraccionamiento para venta');
+
+-- Insertar datos en la tabla estado_colegiado
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Activo');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Inactivo');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Suspendido');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Retirado');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('En trámite');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Rechazado');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Condicionado');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('En revisión');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Expulsado');
+INSERT INTO `estado_colegiado` (`estado`) VALUES ('Fallecido');
+
+-- Insertar datos en la tabla categoria_colegiado
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Notario Público');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Abogado');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Registrador');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Topógrafo');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Arquitecto');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Ingeniero Civil');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Urbanista');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Perito Valuador');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Geógrafo');
+INSERT INTO `categoria_colegiado` (`categoria`) VALUES ('Administrador de Bienes');
+
+
+-- Insertar datos en la tabla especialidad_colegiado
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Derecho Civil');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Derecho Notarial');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Derecho Registral');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Urbanismo');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Catastro');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Valuación de Bienes');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Construcción y Edificación');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Propiedad Intelectual');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Ordenamiento Territorial');
+INSERT INTO `especialidad_colegiado` (`tipo`) VALUES ('Derecho Mercantil');
+
+-- Insertar datos en la tabla colegiado
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (1, 100001, 1, 1, 1, '2027-12-31', '2023-01-01');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (2, 100002, 2, 2, 2, '2026-11-30', '2022-02-15');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (3, 100003, 3, 3, 3, '2025-10-29', '2021-03-20');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (4, 100004, 4, 4, 4, '2028-09-25', '2024-04-10');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (5, 100005, 5, 5, 5, '2029-08-18', '2025-05-05');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (6, 100006, 6, 6, 6, '2030-07-12', '2026-06-08');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (7, 100007, 7, 7, 7, '2031-06-05', '2027-07-01');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (8, 100008, 8, 8, 8, '2032-05-20', '2028-08-09');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (9, 100009, 9, 9, 9, '2033-04-15', '2029-09-22');
+INSERT INTO `colegiado` (`id_persona`, `dpi`, `estado_colegiado`, `categoria`, `especialidad`, `fecha_expiracion`, `fecha_emision`) VALUES (10, 100010, 10, 10, 10, '2034-03-10', '2030-10-30');
+
+-- Insertar datos en la tabla unificacion
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (1, 2, 11, 5000.00, '2024-01-10', 'Unificación de terrenos agrícolas');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (2, 3, 12, 7500.50, '2024-02-15', 'Fusión de terrenos para urbanización');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (3, 4, 13, 12000.00, '2024-03-20', 'Unificación para construcción de complejo');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (4, 5, 14, 6800.75, '2024-04-25', 'Unión de propiedades comerciales');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (5, 6, 15, 8200.25, '2024-05-30', 'Integración de terrenos para parque industrial');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (6, 7, 16, 9500.80, '2024-06-10', 'Fusión de terrenos privados');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (7, 8, 17, 10450.00, '2024-07-15', 'Ampliación de propiedad con terreno adyacente');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (8, 9, 18, 8900.60, '2024-08-20', 'Unificación de terrenos en área de reserva');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (9, 10, 19, 7200.30, '2024-09-25', 'Integración de parcelas para desarrollo inmobiliario');
+INSERT INTO `unificacion` (`colegiado`, `representante`, `id_finca_nueva`, `area`, `fecha`, `observaciones`) VALUES (10, 1, 20, 10000.00, '2024-10-30', 'Unificación para proyecto de inversión');
+
+-- Insertar datos en la tabla unificacion_fincas
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (1, 5);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (1, 6);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (2, 7);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (2, 8);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (3, 9);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (3, 10);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (4, 11);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (4, 12);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (5, 13);
+INSERT INTO `unificacion_fincas` (`id_unificacion`, `id_fincas`) VALUES (5, 14);
+
+-- Insertar datos en la tabla tipo_gravamenes_licitaciones
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Hipoteca');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Embargo');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Usufructo');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Arrendamiento');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Censo');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Derecho de Retención');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Prohibición de Venta');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Garantía Prendaria');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Derecho de Superficie');
+INSERT INTO `tipo_gravamenes_licitaciones` (`tipo`) VALUES ('Carga Fiscal');
+
+-- Insertar datos en la tabla gravamenes_licitaciones
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (1, 2);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (1, 4);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (2, 5);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (2, 7);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (3, 1);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (3, 6);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (4, 3);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (4, 8);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (5, 9);
+INSERT INTO `gravamenes_licitaciones` (`id_unificacion`, `tipo_gravamenes_licitaciones`) VALUES (5, 10);
+
+-- Insertar datos en la tabla titulacion_supletoria
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (1, 2, 10, '2024-01-05');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (2, 3, 11, '2024-02-10');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (3, 4, 12, '2024-03-15');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (4, 5, 13, '2024-04-20');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (5, 6, 14, '2024-05-25');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (6, 7, 15, '2024-06-30');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (7, 8, 16, '2024-07-05');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (8, 9, 17, '2024-08-10');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (9, 10, 18, '2024-09-15');
+INSERT INTO `titulacion_supletoria` (`juez_compotente`, `colegiado`, `id_finca`, `fecha`) VALUES (10, 1, 19, '2024-10-20');
+
+-- Insertar datos en la tabla propietarios
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (1, 3);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (2, 4);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (3, 5);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (4, 6);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (5, 7);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (6, 8);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (7, 9);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (8, 10);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (9, 1);
+INSERT INTO `propietarios` (`persona`, `titulacion_supletoria`) VALUES (10, 2);
+
+-- Insertar datos en la tabla punto_cardinalidad
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Norte');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Sur');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Este');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Oeste');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Noreste');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Noroeste');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Sureste');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Suroeste');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Centro');
+INSERT INTO `punto_cardinalidad` (`descripcion`) VALUES ('Indeterminado');
+
+-- Insertar datos en la tabla colidante
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (1, 1);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (2, 2);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (3, 3);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (4, 4);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (5, 5);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (6, 6);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (7, 7);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (8, 8);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (9, 9);
+INSERT INTO `colidante` (`id_inmueble`, `punto_cardinal`) VALUES (10, 10);
+
+-- Insertar datos en la tabla coordenadas
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (1, -90.5123, 14.6349);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (2, -90.5134, 14.6350);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (3, -90.5145, 14.6351);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (4, -90.5156, 14.6352);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (5, -90.5167, 14.6353);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (6, -90.5178, 14.6354);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (7, -90.5189, 14.6355);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (8, -90.5190, 14.6356);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (9, -90.5201, 14.6357);
+INSERT INTO `coordenadas` (`id_inmueble`, `longitud`, `latitud`) VALUES (10, -90.5212, 14.6358);
+
+---
+-- Insertar datos en la tabla testigo
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (1, 2);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (2, 3);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (3, 4);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (4, 5);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (5, 6);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (6, 7);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (7, 8);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (8, 9);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (9, 10);
+INSERT INTO testigo (titulacion_supletoria, id_colindante) VALUES (10, 1);
+
+-- Insertar datos en la tabla orden_defuncion
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (1, 'Infarto', 2, '2024-01-10 08:30:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (2, 'Accidente', 3, '2024-02-15 12:45:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (3, 'Cáncer', 4, '2024-03-20 14:20:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (4, 'Neumonía', 5, '2024-04-25 16:10:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (5, 'Covid-19', 6, '2024-05-30 18:50:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (6, 'Paro respiratorio', 7, '2024-06-10 21:00:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (7, 'Accidente cerebrovascular', 8, '2024-07-15 09:30:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (8, 'Insuficiencia renal', 9, '2024-08-20 11:10:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (9, 'Diabetes', 10, '2024-09-25 13:40:00');
+INSERT INTO orden_defuncion (id_persona, causa, lugar_fallecimiento, fecha_hora) VALUES (10, 'Enfermedad hepática', 1, '2024-10-30 15:25:00');
+
+-- Insertar datos en la tabla testamento_hereditario
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (1, 3, 5, '2024-01-15');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (2, 4, 6, '2024-02-20');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (3, 5, 7, '2024-03-25');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (4, 6, 8, '2024-04-30');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (5, 7, 9, '2024-05-05');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (6, 8, 10, '2024-06-10');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (7, 9, 1, '2024-07-15');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (8, 10, 2, '2024-08-20');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (9, 1, 3, '2024-09-25');
+INSERT INTO testamento_hereditario (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (10, 2, 4, '2024-10-30');
+
+-- Insertar datos en la tabla herederos
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (1, 3);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (2, 4);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (3, 5);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (4, 6);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (5, 7);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (6, 8);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (7, 9);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (8, 10);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (9, 1);
+INSERT INTO herederos (id_persona, id_testamento_hereditario) VALUES (10, 2);
+
+-- Insertar datos en la tabla hereditario_intestado
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (1, 2, 3, '2024-01-12');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (2, 3, 4, '2024-02-17');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (3, 4, 5, '2024-03-22');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (4, 5, 6, '2024-04-27');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (5, 6, 7, '2024-05-02');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (6, 7, 8, '2024-06-07');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (7, 8, 9, '2024-07-12');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (8, 9, 10, '2024-08-17');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (9, 10, 1, '2024-09-22');
+INSERT INTO hereditario_intestado (orden_defucion, colegiado, representante_legal, fecha_ingreso) VALUES (10, 1, 2, '2024-10-27');
+
